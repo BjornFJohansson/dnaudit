@@ -1,0 +1,19 @@
+{line}
+{name}
+{line}
+
+::
+
+{figure}
+
+The pathway was assembled from the `pYPK0 vector cut with ZraI and EcoRV <./pYPK0_E_Z.txt>`__
+and these {number} PCR products:
+
+{pcrs}
+
+
+
+.. |br| raw:: html
+
+   <br />
+

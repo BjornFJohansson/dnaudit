@@ -1,0 +1,37 @@
+LOCUS       ATO2-GFP                1530 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  ATO2-GFP.
+ACCESSION   ATO2-GFP
+VERSION     ATO2-GFP
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 atgacgtctt catcttctca aaaatctgtt ggatcttcaa tcatagatgc aaaccaagga
+       61 ccaataaaaa aagttgaaat tgctggagag ggtggtgaat ttgttattat caatcgtcac
+      121 aagtactaca gacatgactt gatggctgcc ttcgggggta ctttaaaccc aggtgcttct
+      181 ccttggccaa agatcaatat caaccctgct cccctcgggt tatgtgggtt tgccatgacc
+      241 acttttgtct tatcccttta caatgcccaa gctatgggta tcaaagttcc aaatgtggta
+      301 gtttcacttg catgtttcta cggtggtgca gctcaatttt ttgctggatg ttttgagttt
+      361 gtgactggaa atacatttgg tatgactgca ttgacatctt acggtgcctt ctggttgagt
+      421 tattcagcaa tcttggttga tagttttggt atcgttgcag cctacgaagc ttctgaagaa
+      481 acagcttcac agttaccaaa tgccattgga tttttcttac ttgcttgggg tatctttaca
+      541 tttatgttgt ggttaaacac tttaaaatct acagttactt tcagctcctt gtttttctta
+      601 ttgtttgtaa cattcctttt gttagctggt ggtgaattta gtggaagagt cggtgttact
+      661 agagctggtg gtgtttttgg tgttatcaca gccattgttg cttggtggaa tgccttagcc
+      721 ggtactgcta ctccaaccaa ctcttacttt caacctgttt ctattccatt gccaggtaac
+      781 gttgttttca agaaaggtgc tggcgcaggt gctatgtcta aaggtgaaga attattcact
+      841 ggtgttgtcc caattttggt tgaattagat ggtgatgtta atggtcacaa attttctgtc
+      901 tccggtgaag gtgaaggtga tgctacttac ggtaaattga ccttaaaatt tatttgtact
+      961 actggtaaat tgccagttcc atggccaacc ttagtcacta ctttatgtta tggtgttcaa
+     1021 tgtttttcaa gatacccaga tcatatgaaa caacatgact ttttcaagtc tgccatgcca
+     1081 gaaggttatg ttcaagaaag aactattttt ttcaaagatg acggtaacta caagaccaga
+     1141 gctgaagtca agtttgaagg tgatacctta gttaatagaa tcgaattaaa aggtattgat
+     1201 tttaaagaag atggtaacat tttaggtcac aaattggaat acaactataa ctctcacaat
+     1261 gtttacatca tggctgacaa acaaaagaat ggtatcaaag ctaacttcaa aactagacac
+     1321 aacattgaag atggttctgt tcaattagct gaccattatc aacaaaatac tccaattggt
+     1381 gatggtccag tcttgttacc agacaaccat tacttatcca ctcaatctaa attatccaaa
+     1441 gatccaaacg aaaagagaga ccacatggtc ttgttagaat ttgttactgc tgctggtatt
+     1501 acccatggta tggatgaatt gtacaaataa
+//

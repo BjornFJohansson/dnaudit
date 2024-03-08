@@ -1,0 +1,41 @@
+{line}
+{name}
+{line}
+
+`{template} <./{template}.txt>`_ amplified by PCR using primers: |br|
+
+forward primer : {fwd} |br|
+reverse primer : {rev} |br|
+
+Primers annealing on template:
+::
+
+{figure}
+
+Suggested PCR programs for Taq polymerase and for Polymerases with DNA binding domain:
+::
+
+{program}
+
+
+`PCR product <./{pcr_product}.txt>`_ cloned in `pYPKa <./pYPKa.txt>`_ digested 
+with `{enz} <http://rebase.neb.com/rebase/enz/{enz}.html>`_ resulting in `{rec} <./{rec}.txt>`_
+
+
+
+Colony PCR confirmation strategy using three primers in a multiplex reaction:
+
+{fp} |br|     
+{rp} |br|
+{f}
+
+Expected PCR products sizes(bp):
+
+pYPKa with insert in correct orientation: {correct_products} |br|
+pYPKa with insert in reverse orientation: {reversed_products} |br|
+Empty pYPKa clone                       : {clone_empty} 
+
+
+.. |br| raw:: html
+
+   <br />

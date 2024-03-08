@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
+from pydna import pcr, parse, Genbank, Assembly
+from Bio.Restriction import ZraI, AjiI, EcoRV
+
+from pYPK0 import pYPK0
+from pYPKa_Z_PDC1tp import pYPKa_Z_PDC1tp as first
+from pYPKa_A_KlLAC4 import pYPKa_A_KlLAC4 as middle
+from pYPKa_E_PGI1tp import pYPKa_E_PGI1tp as last
+
+p167,p166,p468,p467,p567,p568  =  parse('''
+                                            >167_pCAPSfw (24-mer)
+                                            TCCTGACGGGTAATTTTGATTTGC
+
+                                            >166_pCAPSrv (24-mer) EMPTY
+                                            CTGTGAAGTGGCTGAAATTTCGTA
+
+                                            >468_pCAPs_release_fw (25-mer) 79.66
+                                            gtcgaggaacgccaggttgcccact
+
+                                            >467_pCAPs_release_re (31-mer) 
+                                            ATTTAAatcctgatgcgtttgtctgcacaga
+
+                                            >567_pCAPsAjiIF (23-mer)
+                                            GTcggctgcaggtcactagtgag
+
+                                            >568_pCAPsAjiIR (22-mer)
+                                            GTGCcatctgtgcagacaaacg''')
+
+
+first  = pcr( p167, p567, first)
+middle = pcr( p468, p467, middle)
+last   = pcr( p568, p166, last)
+
+pYPK0_E_Z, stuffer = pYPK0.cut((EcoRV, ZraI))
+
+a = Assembly([first, middle, last, pYPK0_E_Z], limit=31)
+
+pYPK0_PDC1tp_KlLAC4_PGI1tp = a.circular_products[0].synced("tcgcgcgtttcggtgatgacggtgaaaacctctg")

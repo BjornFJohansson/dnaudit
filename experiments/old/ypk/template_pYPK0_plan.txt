@@ -1,0 +1,77 @@
+{line}
+{name}
+{line}
+
+cut `pYPK0 <./pYPK0.txt>`_ with `ZraI <http://rebase.neb.com/rebase/enz/ZraI.html>`_ and `EcoRV <http://rebase.neb.com/rebase/enz/EcoRV.html>`_
+and remove the 81bp stuffer fragment.
+
+co-transform the `linearized vector <./pYPK0_E_Z.txt>`_ with the following three PCR products:
+
+Product #1
+..........
+
+primers 167_pCAPSfw,  512_crp_EcoRV and template  `{tmp1} <./{tmp1}.txt>`_ => `{tp1} <./{tp1_name}.txt>`_      |br|   
+::
+
+{pcr1}
+
+{prg1}
+
+Product #2
+..........
+
+primers 665_crp_ZraI, 512_crp_EcoRV and template  `{tmp2} <./{tmp2}.txt>`_ => `{gene} <./{gene_name}.txt>`_     |br|   
+::
+
+{pcr2}
+
+{prg2}
+
+Product #3
+..........
+
+primers 665_crp_ZraI, 166_pCAPSrv and template    `{tmp3} <./{tmp3}.txt>`_ => `{tp2} <./{tp2_name}.txt>`_      |br|   
+::
+
+{pcr3}
+
+{prg3}
+
+Assembly
+........
+
+::
+
+{figure}
+
+
+Colony PCR confirmation strategy for first tp and gene using primers:
+.....................................................................
+
+{fp_tp_gene} |br|     
+{rp_tp_gene} |br|
+
+PCR products (bp)
+
+    Correct vector with tp-gene-tp : {correct_first_tp_gene_prd} |br|
+    Missing first tp : {missing_first_tp_prd} |br|
+    Missing gene : {missing_gene_prd1} |br|
+    Missing both gene and first tp : {empty_prd1} |br|
+
+Colony PCR confirmation strategy for gene and last tp using primers:
+....................................................................
+
+{fp_gene_tp} |br|     
+{rp_tp2_gene} |br|
+
+PCR products (bp)
+
+    Correct         : {correct_gene_tp_prd} |br|
+    Missing gene    : {missing_gene_prd2} |br|
+    Missing last tp : {missing_last_tp_prd} |br|
+    Missing both    : {empty_prd2} |br|
+
+.. |br| raw:: html
+
+   <br />
+

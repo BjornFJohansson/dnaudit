@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///home/bjorn/Dropbox/google_appengine/google_appengine/ypk/YPK.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link href="./YPK_files/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="./YPK_files/jquery.min.js"></script>
+  <script src="./YPK_files/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#tabs").tabs();
+  });
+  </script>
+</head>
+<body style="font-size:62.5%;">
+  
+<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+        <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="file:///home/bjorn/Dropbox/google_appengine/google_appengine/ypk/YPK.html#fragment-1"><span>Yeast Pathway Kit</span></a></li>
+        <li class="ui-state-default ui-corner-top"><a href="file:///home/bjorn/Dropbox/google_appengine/google_appengine/ypk/YPK.html#fragment-2"><span>Terminator-Promoters</span></a></li>
+        <li class="ui-state-default ui-corner-top"><a href="file:///home/bjorn/Dropbox/google_appengine/google_appengine/ypk/YPK.html#fragment-3"><span>Genes</span></a></li>
+        <li class="ui-state-default ui-corner-top"><a href="file:///home/bjorn/Dropbox/google_appengine/google_appengine/ypk/YPK.html#fragment-4"><span>Simulate</span></a></li>
+    </ul>
+    <div id="fragment-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+        Yeast Pathway Kit
+    </div>
+    <div id="fragment-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+        Terminator-Promoters     
+
+
+    </div>
+
+    <div id="fragment-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">  
+        Genes
+
+    </div>
+
+    <div id="fragment-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+        Simulate
+    </div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,6 @@
+
+-----
+
+{% include_sequence_file 'pYPKa.gb' %}
+
+-----

@@ -1,0 +1,25 @@
+application: yeast-pathway-kit-assembler
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  
+- url: /general.css
+  static_files: general.css
+  upload: general.css 
+
+- url: .*
+  script: yeast_pathway_kit_assembler_interface.app
+
+libraries:
+- name: webapp2
+  version: "latest"
+- name: setuptools
+  version: "0.6c11"
+- name: numpy
+  version: "latest"

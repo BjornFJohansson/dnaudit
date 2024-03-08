@@ -1,0 +1,16 @@
+# coding: utf-8
+
+import zipfile
+import StringIO
+
+def assemble_ypk(seqs):    
+    zipstream = StringIO.StringIO()    
+    with zipfile.ZipFile(zipstream, mode='w') as myzip:        
+        myzip.writestr("voidspace.css", open("voidspace.css").read())
+        myzip.writestr("seqs.txt", seqs)            
+    zipstream.seek(0)    
+    return zipstream #.getvalue()
+    
+
+        
+

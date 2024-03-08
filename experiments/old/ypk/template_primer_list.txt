@@ -1,0 +1,32 @@
+{primer_list}
+
+General primers:
+
+167_pCAPSfw             TCCTGACGGGTAATTTTGATTTGC
+166_pCAPSrv             CTGTGAAGTGGCTGAAATTTCGTA
+468_pCAPs_release_fw    gtcgaggaacgccaggttgcccact
+467_pCAPs_release_re    ATTTAAatcctgatgcgtttgtctgcacaga
+567_pCAPsAjiIF          GTcggctgcaggtcactagtgag
+568_pCAPsAjiIR          GTGCcatctgtgcagacaaacg
+512_crp_EcoRV           ttcgccaattgattcaggtaaatccggat
+665_crp_ZraI            agcagagtctgtgcaatgcggccgctgac
+783_>crp_365            atcctgatgcgtttgtctgcacagatggc
+802                     tttctcactagtgacctgcagccgac      
+YPK-A                   tgtgcaatgcggccgctgac        
+342_ORIR-1              CCTTTTTACGGTTCCTGGCCT
+
+
+                             >-gene-->
+            >-TP-->           \     /           >-TP-->                     
+             \   /             \   /             \   /
+              \ /               \ /               \ /
+        ypka>  |            802> |<783             |
+ 167>    665>  | 468>      <567  | 568>       <467 |<512     <166 
+ |||     |||   | |||        |||  | |||         ||| | |||      |||
+ --------------Z-----------------A-----------------E--------------
+|              r                 j                 c              |
+|              a                 i                 o              |
+|              I                 I                 R              |
+|                                                  V              |
+|                                                                 |
+ --------------------- pYPKa -------------------------------------

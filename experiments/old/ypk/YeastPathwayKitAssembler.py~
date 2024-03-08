@@ -1,0 +1,506 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import pydna
+import textwrap
+from docutils.core import publish_string
+from docutils.writers.html4css1 import Writer as HisWriter
+import re
+from Bio.Alphabet.IUPAC import IUPACAmbiguousDNA
+from Bio.GenBank import RecordParser
+from Bio.Restriction import  ZraI, AjiI, EcoRV
+from Bio import SeqIO
+from time import gmtime, strftime
+import zipfile
+import StringIO
+
+pYPKa = pydna.read("pYPKa.txt")
+pYPK0 = pydna.read("pYPK0.txt")
+
+def add_line_block(s):
+    return  "\n".join( "|{}".format(line) for line in s.splitlines())
+
+def add_space(s):
+    return  "\n".join( " {}".format(line) for line in s.splitlines())
+        
+def cloned(vector, enzyme, candidate):
+    if len(candidate) <= len(vector):
+        return 0   
+    candidate2 = str(candidate.seq.tolinear()*2).lower()
+    linear_vector = vector.cut(enzyme).pop(0)
+    if linear_vector.seq.tostring().lower() in candidate2:
+        #insert = min([c for c in candidate3.split(str(candidate.seq)) if c])
+        #print [len(c) for c in candidate3.split(str(candidate.seq)) if c]
+        return len(candidate) - len(vector)
+    return 0
+    
+class pYPKa_clone(object):
+
+    with open("template_pYPKa_X_insert.txt") as f:
+        codetempl = f.read()
+        
+    with open("template_pYPKa_plan.txt") as f:
+        plantempl = f.read()
+    
+    minlength   = 16
+    maxlength   = 29
+    target_tm   = 60
+
+    def __init__(self, enzyme, data):
+        fp_tail = "ttaaat"
+        rp_tail = "taattaa"
+        if enzyme == ZraI:
+            fp = pydna.read(">YPK-A\ntgtgcaatgcggccgctgac")
+            rp = pydna.read(">342_ORIR-1 (21-mer)\nCCTTTTTACGGTTCCTGGCCT") #primer[342]
+            desc_re  = re.compile("pYPKa_Z_([^\d\W]\w{2,15})tp")
+            self.letter = "Z"
+        elif enzyme == AjiI:
+            fp = pydna.read(">468_pCAPs_release_fw (25-mer)\ngtcgaggaacgccaggttgcccact") #primer[468]
+            rp = pydna.read(">342_ORIR-1 (21-mer)\nCCTTTTTACGGTTCCTGGCCT")               #primer[342]
+            fp_tail = "aa"
+            rp_tail = ""
+            desc_re  = re.compile("pYPKa_A_([^\d\W]\w{2,15})")
+            self.letter = "A"
+        elif enzyme == EcoRV:
+            fp = pydna.read(">568_pCAPsAjiIR (22-mer)\nGTGCcatctgtgcagacaaacg") #primer[568]
+            rp = pydna.read(">342_ORIR-1 (21-mer)\nCCTTTTTACGGTTCCTGGCCT")      #primer[342]
+            desc_re  = re.compile("pYPKa_E_([^\d\W]\w{2,15})tp")
+            self.letter = "E"
+        else:
+            raise Exception("Enzyme has to be ZraI, Ajii or EcoRV, but got {}".format(enzyme))
+            
+        self.enzyme  = enzyme
+        
+        self.insert_length = cloned(pYPKa, enzyme, data)
+              
+        if self.insert_length:
+            m = desc_re.search(data.description)            
+            if not m:
+                raise Exception("{} is a pYPKa_{} sequence but was not correctly named.".format(data.description,
+                                                                                                self.letter))
+            self.insert_description = m.group(1)
+            self.name = m.group(0)
+            self.code = "{} = read('{}.txt')".format({ "Z":"first",
+                                                       "A":"middle",
+                                                       "E":"last"}[self.letter],
+                                                      self.name)   
+            self.files = { "{}.txt".format(self.name)       : data.format("gb"),
+                           "{}_plan.rst".format(self.name) :  "This vector was given!"}
+            self.rec = data
+            self.flag = True      
+            
+        elif data.linear:
+            self.insert_description = data.name # .id .description
+            f,r = pydna.cloning_primers(data,
+                                        minlength=pYPKa_clone.minlength,
+                                        maxlength=pYPKa_clone.maxlength,
+                                        fp_tail=fp_tail,
+                                        rp_tail=rp_tail)  
+
+            code = pYPKa_clone.codetempl.format( enz = self.enzyme,
+                                                 tp  = data.description,
+                                                 f   = f.format("fasta"),
+                                                 r   = r.format("fasta"))           
+            self.insert = pydna.pcr(f, r, data)
+            
+            self.insert_length = len(self.insert)
+            
+            self.insert.description+= "_prd"
+            
+            self.name = "pYPKa_{}_{}{}".format(self.letter, 
+                                               data.name,
+                                               {ZraI : "tp",
+                                                AjiI : "",
+                                                EcoRV: "tp" }[enzyme])
+
+            self.rec =    (pYPKa.cut(self.enzyme).pop() + self.insert).looped().synced("tcgcgcgtttcggtgatgacggtgaaaacctctg")
+            self.rec_rv = (pYPKa.cut(self.enzyme).pop() + self.insert.rc()).looped().synced("tcgcgcgtttcggtgatgacggtgaaaacctctg")
+            
+            self.rec.description = self.name
+
+            plan = pYPKa_clone.plantempl.format( template =  "{}_template".format(data.name), 
+                                                 rec = self.name,
+                                                 fwd = self.insert.forward_primer.format("tab"),
+                                                 rev = self.insert.reverse_primer.format("tab"),                                                 
+                                                 figure =add_space(self.insert.figure()),
+                                                 program =add_space(self.insert.program()),
+                                                 pcr_product =self.insert_description,
+                                                 enz=enzyme,
+                                                 name = self.name,
+                                                 line =  "="*len(self.name),
+                                                 fp = fp.format("tab"),
+                                                 rp = rp.format("tab"),
+                                                 f  = f.format("tab"),                                              
+                                                 correct_products =  ", ".join(str(f) for f in [len(p) for p in pydna.Anneal((fp,rp,f), self.rec).products]),
+                                                 reversed_products =  ", ".join(str(f) for f in [len(p) for p in pydna.Anneal((fp,rp,f), self.rec_rv).products]),
+                                                 clone_empty =  ", ".join(str(f) for f in [len(p) for p in pydna.Anneal((fp,rp,f), pYPKa).products]))
+            
+            self.files = { "{}_template.txt".format(data.name) : data.format("gb"),
+                           "{}.txt".format(self.insert_description) : self.insert.format("gb"),
+                           "{}.txt".format(self.name)               : self.rec.format("gb"),
+                           "{}.py".format(self.name)                : code,
+                           "{}_plan.rst".format(self.name)          : plan}
+                          
+            self.code = "from {0} import {0} as {1}".format(self.name,
+                                                            {ZraI : "first",
+                                                             AjiI : "middle",
+                                                             EcoRV: "last" }[enzyme])                                                                    
+    
+            self.flag = False
+        else:
+            raise Exception("{} has to be a linear DNA fragment or a pYPKa_{} clone!".format(data.description, 
+                                                                                             self.letter))
+       
+    def __repr__(self):
+        return  "{} {}".format(self.name, {True :  "given", False:  "cloned" }[self.flag])
+
+
+                                          
+
+
+
+
+
+
+
+class pYPK0_tp_gene_tp(object):
+
+    desc_re  = re.compile("pYPK0_([^\d\W]\w{2,15})tp_([^\d\W]\w{2,15})_([^\d\W]\w{2,15})tp")
+    
+    with open("template_pYPK0_tp_gene_tp.txt") as f:
+        codetempl = f.read()
+    
+    with open("template_pYPK0_plan.txt") as f:
+        plantempl = f.read()
+        
+    pYPK0_E_Z, stuffer = pYPK0.cut((EcoRV, ZraI))
+    
+    (p167,
+     p166,
+     p468,
+     p467,
+     p567,
+     p568,
+     p512,
+     p665) = pydna.parse(   '''
+                            >167_pCAPSfw (24-mer)
+                            TCCTGACGGGTAATTTTGATTTGC
+                            >166_pCAPSrv (24-mer) EMPTY
+                            CTGTGAAGTGGCTGAAATTTCGTA
+                            >468_pCAPs_release_fw (25-mer) 79.66
+                            gtcgaggaacgccaggttgcccact
+                            >467_pCAPs_release_re (31-mer) 
+                            ATTTAAatcctgatgcgtttgtctgcacaga
+                            >567_pCAPsAjiIF (23-mer)
+                            GTcggctgcaggtcactagtgag
+                            >568_pCAPsAjiIR (22-mer)
+                            GTGCcatctgtgcagacaaacg
+                            >512_crp_EcoRV (29-mer)
+                            ttcgccaattgattcaggtaaatccggat
+                            >665_crp_ZraI (29-mer) (new)
+                            agcagagtctgtgcaatgcggccgctgac
+                            ''', ds=False)
+    
+    def __init__(self, *args):
+
+        self.pYPKa_ZraI_tp1  = None
+        self.pYPKa_AjiI_gene = None
+        self.pYPKa_EcoRV_tp2 = None
+        
+        if len(args)==1:
+            self.seq = args[0]            
+            m = pYPK0_tp_gene_tp.desc_re.search(self.seq.description)
+            if not m:
+                raise Exception( "{} is a pYPK0 tp-gene_tp sequence but was not correctly named.".format(last.description))
+       
+            self.tp1_description  = m.group(1)
+            self.gene_description = m.group(2)
+            self.tp2_description  = m.group(3)
+            self.pYPKa_clones = []
+            
+            self.seq.description = self.seq.description.replace(" ","_")
+            
+            self.files = {  "{}.txt".format(self.seq.description) : self.seq.format("gb"),
+                            "{}_plan.rst".format(self.seq.description) :  "This vector was given!"}            
+            self.code =  "{i} = read('{f}')".format(f= "{}.txt".format(self.seq.description), i= "{}")
+                
+        elif len(args)==3:
+            
+
+            self.pYPKa_clones = [pYPKa_clone(ZraI, args[0]), 
+                                 pYPKa_clone(AjiI, args[1]),
+                                 pYPKa_clone(EcoRV,args[2])]
+            
+            first  = pydna.pcr( pYPK0_tp_gene_tp.p167, pYPK0_tp_gene_tp.p567, self.pYPKa_clones[0].rec)
+            middle = pydna.pcr( pYPK0_tp_gene_tp.p468, pYPK0_tp_gene_tp.p467, self.pYPKa_clones[1].rec)
+            last   = pydna.pcr( pYPK0_tp_gene_tp.p568, pYPK0_tp_gene_tp.p166, self.pYPKa_clones[2].rec)
+            
+            self.assembly = pydna.Assembly([pYPK0_tp_gene_tp.pYPK0_E_Z, first, middle, last])
+            self.assembly.analyze_overlaps(limit=31)
+            self.assembly.create_graph()
+            self.assembly.assemble_hr_circular()
+            self.seq = self.assembly.circular_products[0]
+            
+            self.tp1_description  = self.pYPKa_clones[0].insert_description
+            self.gene_description = self.pYPKa_clones[1].insert_description
+            self.tp2_description  = self.pYPKa_clones[2].insert_description
+            
+            self.seq.description =  "pYPK0_{}tp_{}_{}tp".format(self.pYPKa_clones[0].insert_description,
+                                                               self.pYPKa_clones[1].insert_description,
+                                                               self.pYPKa_clones[2].insert_description)
+                                                               
+            tp_gene_size = [len(p) for p in pydna.Anneal((pYPK0_tp_gene_tp.p167,pYPK0_tp_gene_tp.p467), self.seq).products]                                                    
+            gene_tp_size = [len(p) for p in pydna.Anneal((pYPK0_tp_gene_tp.p468,pYPK0_tp_gene_tp.p166), self.seq).products]                   
+            
+
+            
+            plan = pYPK0_tp_gene_tp.plantempl.format( name = self.seq.description,
+                                                      tp1  = first.name,
+                                                      gene = middle.name, 
+                                                      tp2  = last.name,
+                                                      figure  = add_space(self.seq.small_fig()),
+                                                      pcr1=add_space(first.figure()),
+                                                      pcr2=add_space(middle.figure()),
+                                                      pcr3=add_space(last.figure()),
+                                                      prg1=add_space(first.program()),
+                                                      prg2=add_space(middle.program()),
+                                                      prg3=add_space(last.program()),
+                                                      tp1_name  = self.pYPKa_clones[0].name+"_pcr_prd",
+                                                      gene_name = self.pYPKa_clones[1].name+"_pcr_prd", 
+                                                      tp2_name  = self.pYPKa_clones[2].name+"_pcr_prd",                                                     
+                                                      tmp1 = self.pYPKa_clones[0].name,
+                                                      tmp2 = self.pYPKa_clones[1].name,
+                                                      tmp3 = self.pYPKa_clones[2].name,                                              
+                                                      line =  "="*len(self.seq.description),
+                                                      fp_tp_gene = pYPK0_tp_gene_tp.p167.format("tab"),
+                                                      rp_tp_gene = pYPK0_tp_gene_tp.p467.format("tab"),
+                                                      correct_first_tp_gene_prd =  ", ".join(str(s) for s in tp_gene_size),
+                                                      missing_first_tp_prd =  ", ".join(str(s-self.pYPKa_clones[0].insert_length) for s in tp_gene_size),
+                                                      missing_gene_prd1 =  ", ".join(str(s-self.pYPKa_clones[1].insert_length) for s in tp_gene_size),
+                                                      empty_prd1 =  ", ".join(str(s-self.pYPKa_clones[0].insert_length-self.pYPKa_clones[1].insert_length   ) for s in tp_gene_size),
+                                                      fp_gene_tp = pYPK0_tp_gene_tp.p468.format("tab"),
+                                                      rp_tp2_gene = pYPK0_tp_gene_tp.p166.format("tab"),
+                                                      correct_gene_tp_prd =  ", ".join(str(s) for s in gene_tp_size),
+                                                      missing_gene_prd2 =  ", ".join(str(s-self.pYPKa_clones[1].insert_length) for s in gene_tp_size),
+                                                      missing_last_tp_prd =  ", ".join(str(s-self.pYPKa_clones[2].insert_length) for s in gene_tp_size),
+                                                      empty_prd2 =  ", ".join(str(s-self.pYPKa_clones[1].insert_length-self.pYPKa_clones[2].insert_length) for s in gene_tp_size),)
+            
+            #print type(plan);import sys;sys.exit()                                         
+            code = [ "    "+self.pYPKa_clones[0].code,
+                     "    "+self.pYPKa_clones[1].code,
+                     "    "+self.pYPKa_clones[2].code]                                 
+
+            code = pYPK0_tp_gene_tp.codetempl.format( code =  "\n".join(code) )
+            
+            self.files = {self.pYPKa_clones[0].name+"_pcr_prd.txt"  : first.format("gb"),
+                          self.pYPKa_clones[1].name+"_pcr_prd.txt"  : middle.format("gb"),
+                          self.pYPKa_clones[2].name+"_pcr_prd.txt"  : last.format("gb"),
+                          
+                          
+                           "{}.py".format(self.seq.description)  : code,
+                           "{}.txt".format(self.seq.description) : self.seq.synced("tcgcgcgtttcggtgatgacggtgaaaacctctg").format("gb"),
+                           "{}_plan.rst".format(self.seq.description) : plan}
+            self.code =  "from {i} import {i} as {c}".format(i=self.seq.description, c="{}")
+            
+        else:
+            raise Exception("Either one or three arguments!")
+
+    def left_product(self):    
+        return pydna.pcr(pYPK0_tp_gene_tp.p167, pYPK0_tp_gene_tp.p512, self.seq)
+        
+    def assembly_product(self):    
+        return pydna.pcr(pYPK0_tp_gene_tp.p665, pYPK0_tp_gene_tp.p512, self.seq) 
+        
+    def right_product(self):    
+        return pydna.pcr(pYPK0_tp_gene_tp.p665, pYPK0_tp_gene_tp.p166, self.seq)
+        
+    def __repr__(self):
+        return  "pYPKa_tp_gene_tp({})".format(len(self.seq))
+       
+
+    
+
+  
+####################################################################################################################
+
+
+class PathWay(object):
+
+    with open("template_pYPK0_pw.txt") as f:
+        codetempl = f.read()
+    
+    with open("template_pYPK0_pw_plan.txt") as f:
+        plantempl = f.read()
+
+    def __init__(self, pw, email =  ""):
+
+        self.pw = pw
+        self.pth = pydna.parse(pw)
+        
+        print ">>>", self.pth
+        
+        self.files = None
+        self.tp_gene_tp = []
+
+        pth=self.pth
+        
+        while pth:    
+            last = pth.pop()
+            if cloned(pYPK0, (ZraI, EcoRV),  last): # sequence is a tp-gene-tp
+                self.tp_gene_tp.append(pYPK0_tp_gene_tp(last))
+                continue
+            try:
+                middle = pth.pop()
+                first  = pth.pop()
+                
+            except IndexError:
+                raise Exception("not enough sequences")
+            self.tp_gene_tp.append(pYPK0_tp_gene_tp(first, middle, last))
+        
+        self.tp_gene_tp.reverse()
+
+        self.pYPK0_E_Z = self.tp_gene_tp[0].pYPK0_E_Z
+        pw = [self.pYPK0_E_Z, self.tp_gene_tp[0].left_product()]        
+        pw.extend([c.assembly_product() for c in self.tp_gene_tp[1:-1]])        
+        pw.append(self.tp_gene_tp[-1].right_product())       
+        
+        self.assembly = pydna.Assembly(pw)      
+        self.assembly.analyze_overlaps(limit=61)
+        self.assembly.create_graph()
+        self.assembly.assemble_hr_circular()       
+        self.seq = self.assembly.circular_products[0]
+
+    def generate_files(self):
+    
+        self.files = {}
+
+        self.files["pYPK0_E_Z.txt"] = self.pYPK0_E_Z.format("gb")
+        
+        for file_ in (  "voidspace.css",    "nature.css",     "header.py", 
+                        "footer.py",        "pYPK0.py",       "pYPK0.txt", 
+                        "pYPKa.py",         "pYPKa.txt",      "pCAPs.py", 
+                        "pCAPs.txt",        "pSU0.py",        "pSU0.txt",  
+                        "pSU0_EcoRV.txt",   "pSU0_EcoRV.py",):
+            with open(file_, "r") as f:
+                self.files[file_] = f.read()
+
+        
+        date_ = strftime("%Y-%m-%d", gmtime())
+        time_ = strftime("%H:%M:%S", gmtime())
+        now =  "{} {}".format(date_, time_)
+        
+        pathway_name =  "pYPK0_"
+        
+        self.files["report.rst"]= ""
+        
+        seguids=[]
+        pl=  "Specific Primers:\n\n"
+        
+        for c in self.tp_gene_tp:
+            self.files.update(c.files)
+            pathway_name+="{}tp_{}_".format(c.tp1_description, c.gene_description)
+            self.files["report.rst"]+=  "`{0} <./{0}.txt>`_ (`plan <./{0}_plan.html>`__)\n\n".format(c.seq.description)
+            for p in c.pYPKa_clones:
+                self.files.update(p.files)
+                self.files["report.rst"]+=  "\t * `{0} <./{0}.txt>`_ (`plan <./{0}_plan.html>`__)\n".format(p.name)
+                if not p.flag:
+                    if not p.insert.seguid() in seguids:
+                        pl+="{}\t{}\n".format(p.insert.forward_primer.description, p.insert.forward_primer.seq)
+                        pl+="{}\t{}\n".format(p.insert.reverse_primer.description, p.insert.reverse_primer.seq)
+                        seguids.append(p.insert.seguid())
+            self.files["report.rst"]+= "\n"
+        
+        pathway_name+="{}tp".format(self.tp_gene_tp[-1].tp2_description)
+
+        self.files["{}.txt".format(pathway_name)] = self.seq.synced("tcgcgcgtttcggtgatgacggtgaaaacctctg").format("gb")
+                             
+        code = []
+        cassettes = []
+   
+        for i, tgt in enumerate(self.tp_gene_tp):
+            cas =  "cas{}".format(i+1)
+            code.append(tgt.code.format(cas))
+            cassettes.append(cas)
+             
+        code.append("cas1  = pcr( p167, p512, cas1)")
+        
+        for i in range(2, len(self.tp_gene_tp)):
+            code.append("cas{i}  = pcr( p665, p512, cas{i})".format(i=i))
+        code.append("cas{i} = pcr( p665, p166, cas{i})".format(i=len(self.tp_gene_tp)))        
+        code =  "    "+  "\n    ".join(code)        
+        self.files["{}.py".format(pathway_name)] = PathWay.codetempl.format(code = code, cassettes =  ",".join(cassettes))
+
+        pcrs=""
+        
+        for frag in self.seq.source_fragments[1:]:
+            pcrs +=  "primers {f}, {r} and template `{t} <./{t}.txt>`__ => `{n} <./{n}.txt>`__ |br| |br|\n".format(n=frag.name, 
+                                                                                            f = frag.forward_primer.name,
+                                                                                            r = frag.reverse_primer.name,
+                                                                                            t = frag.template.description)
+                                                       
+            self.files["{n}.txt".format(n=frag.name)] = frag.format("gb")
+
+        self.files["{}_plan.rst".format(pathway_name)] = PathWay.plantempl.format( line =  "="*len(pathway_name),
+                                                                                   name= pathway_name,
+                                                                                   number = len(self.tp_gene_tp),
+                                                                                   figure  = add_space(self.seq.small_fig()),
+                                                                                   pcrs = pcrs)
+
+        with open("template_primer_list.txt") as f:
+            self.files["primer_list.txt"] = f.read().format(primer_list = pl)       
+
+        #with open("template_primary_pcr_reactions_header.txt") as f:
+        #    self.files["primary_pcr_reactions.rst"] = f.read()+self.files["primary_pcr_reactions.rst"]    
+      
+        with open("template_report.txt") as f:
+            self.files["report.rst"] = f.read().format(**locals())+self.files["report.rst"]
+        
+        #print type(self.files["report.rst"]);import sys;sys.exit()
+
+        args = {#'output_encoding' : 'unicode',
+                #'input_encoding'  : 'unicode',
+                'stylesheet_path' : 'voidspace.css',}
+
+        for f, c in self.files.items():
+            if f.endswith(".rst"):
+                html = publish_string(c, 
+                                      writer=HisWriter(), 
+                                      settings=None, 
+                                      settings_overrides=args)
+                self.files[f.split(".")[0]+".html"] = html
+            
+   
+    def zs(self):
+        if not self.files:
+            self.generate_files()       
+        zipstream = StringIO.StringIO()            
+        with zipfile.ZipFile(zipstream, mode='w') as myzip:
+            for name, content in self.files.items():
+                myzip.writestr(name, content) 
+        zipstream.seek(0)
+        return zipstream.getvalue()
+        
+if __name__ == "__main__":
+    import sys, os
+    print "start!"
+    try:
+        filename = sys.argv[1]
+    except IndexError:
+        raise Exception("data file expected!")
+    else:
+        with open(filename, "r") as f:
+            text=f.read()
+            
+        pw = PathWay( text )   
+        pw.generate_files()
+        
+        n=1000
+        line = pw.zs()
+        r=[line[i:i+n] for i in range(0, len(line), n)]    
+        
+        with open("ypk_assembly.zip", "wa") as f:
+            for chk in r:
+                f.write(chk)
+  
+        print  "done!"
+

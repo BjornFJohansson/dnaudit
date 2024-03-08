@@ -1,0 +1,69 @@
+# rec
+
+>1066bp_A
+GACGGCACGGCCACGCGTTTAAACCGCCaggtgatgctgaagctattgaagctttggatggttctttcactaccgatactgtttttagagttactgctactggtgatggtttcactttgagagaagttccagttgatccaccattgactaaggttttcccagatgatgaatccgatgatgaatccgatgctggtgaagatggtgatccagattctagaactttcgttgcttatggtgatgatggtgatttggctggtttcgttgttgtttcttattctggttggaacagaagattgactgttgaagatattgaagttgctccagaacatagaggtcatggtgttggtagagctttgatgggtttggctactgaattcgccagagaaagaggtgctggtcatttgtggttggaagttaccaatgttaatgctccagctattcatgcttatagaagaatgggtttcactttgtgtggtttggatactgctttatacgatggtactgcttccgatggtgaacaagctttgtatatgtctatgccatgtccataataactcgagtcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacatctaatcaactcccagatcaccactatacatttaaaagtcattggtcaataactatactcgagtattgcctcatcaaagaaacaatcaaatattatagatactcactccatcacgtgataatttcactggtatggaaaagtggaaaattttataaaaaaaaatttgatgcctttggcatagctgaaacttcggcccaataggattggagaatatgttttcgcagcgttcttacaattaaattgtggtggaagttcgagacttgcgtaaactatttttaatttg
+
+>704bp_B
+CGTAAACTATTTTTAATTTGGGATCTTGTAAATCTGGTAAGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTTCTCGAGtttttttaTCGAGgaagttcctatactttctagagaataggaacttcCCACCTTGATGTACACACCTTTAAAGTCAATAGGCATTCTCGTTTGTAATTCCTTGACACACATATCCATTAACTTTAAACCATCTTCGACCGTCATGTCCTTTCTATAATGTTTATCTAACAAAGATGTTGTGTAAAATGCAGCGTAGCCATGAGCACCATAAGGGAGTTCAACTTGTGTACCCAAATAATCTATCCAATTCAACGATGGCTCATTTTTCTTTACATCATATCCTCCAATTAAACAGTTCACCTGGTACGGTTTTCTAGATCTAAGGGAACTGGCCAATTGGTTTCTCACAAACGAGGCTGTTGCCTTTGGAGATAACTCAATGTCATTTTCTCTCATCGAGTACAATTGAATGTTTGCTTGAACATACTCGGCAAACTGAACCGTATCACCAGCTTCACCAGTGTATGCTATTAAGTTGTGTGCATTTAAATGTCTTGTTTTATCATCTGTATCCTTTAAAATTGAAATACCTCTTGTGGCAGCTTTACGGTGTTTAAACCCCAGCGCCTGGCGGG
+
+
+Figure:
+
+1066bp_A|20
+         \/
+         /\
+         20|704bp_B
+
+Detailed figure:
+
+GACGGCACGGCCACGCGTTTAAACCGCCaggtgatgctgaagctattgaagctttggatggttctttcactaccgatactgtttttagagttactgctactggtgatggtttcactttgagagaagttccagttgatccaccattgactaaggttttcccagatgatgaatccgatgatgaatccgatgctggtgaagatggtgatccagattctagaactttcgttgcttatggtgatgatggtgatttggctggtttcgttgttgtttcttattctggttggaacagaagattgactgttgaagatattgaagttgctccagaacatagaggtcatggtgttggtagagctttgatgggtttggctactgaattcgccagagaaagaggtgctggtcatttgtggttggaagttaccaatgttaatgctccagctattcatgcttatagaagaatgggtttcactttgtgtggtttggatactgctttatacgatggtactgcttccgatggtgaacaagctttgtatatgtctatgccatgtccataataactcgagtcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacatctaatcaactcccagatcaccactatacatttaaaagtcattggtcaataactatactcgagtattgcctcatcaaagaaacaatcaaatattatagatactcactccatcacgtgataatttcactggtatggaaaagtggaaaattttataaaaaaaaatttgatgcctttggcatagctgaaacttcggcccaataggattggagaatatgttttcgcagcgttcttacaattaaattgtggtggaagttcgagacttgcgtaaactatttttaatttg
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      CGTAAACTATTTTTAATTTG
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      CGTAAACTATTTTTAATTTGGGATCTTGTAAATCTGGTAAGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTTCTCGAGtttttttaTCGAGgaagttcctatactttctagagaataggaacttcCCACCTTGATGTACACACCTTTAAAGTCAATAGGCATTCTCGTTTGTAATTCCTTGACACACATATCCATTAACTTTAAACCATCTTCGACCGTCATGTCCTTTCTATAATGTTTATCTAACAAAGATGTTGTGTAAAATGCAGCGTAGCCATGAGCACCATAAGGGAGTTCAACTTGTGTACCCAAATAATCTATCCAATTCAACGATGGCTCATTTTTCTTTACATCATATCCTCCAATTAAACAGTTCACCTGGTACGGTTTTCTAGATCTAAGGGAACTGGCCAATTGGTTTCTCACAAACGAGGCTGTTGCCTTTGGAGATAACTCAATGTCATTTTCTCTCATCGAGTACAATTGAATGTTTGCTTGAACATACTCGGCAAACTGAACCGTATCACCAGCTTCACCAGTGTATGCTATTAAGTTGTGTGCATTTAAATGTCTTGTTTTATCATCTGTATCCTTTAAAATTGAAATACCTCTTGTGGCAGCTTTACGGTGTTTAAACCCCAGCGCCTGGCGGG
+
+
+Resulting sequence:
+
+>1750_AB_FRP3
+GACGGCACGGCCACGCGTTTAAACCGCCaggtgatgctgaagctattgaagctttggatggttctttcactaccgatactgtttttagagttactgctactggtgatggtttcactttgagagaagttccagttgatccaccattgactaaggttttcccagatgatgaatccgatgatgaatccgatgctggtgaagatggtgatccagattctagaactttcgttgcttatggtgatgatggtgatttggctggtttcgttgttgtttcttattctggttggaacagaagattgactgttgaagatattgaagttgctccagaacatagaggtcatggtgttggtagagctttgatgggtttggctactgaattcgccagagaaagaggtgctggtcatttgtggttggaagttaccaatgttaatgctccagctattcatgcttatagaagaatgggtttcactttgtgtggtttggatactgctttatacgatggtactgcttccgatggtgaacaagctttgtatatgtctatgccatgtccataataactcgagtcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacatctaatcaactcccagatcaccactatacatttaaaagtcattggtcaataactatactcgagtattgcctcatcaaagaaacaatcaaatattatagatactcactccatcacgtgataatttcactggtatggaaaagtggaaaattttataaaaaaaaatttgatgcctttggcatagctgaaacttcggcccaataggattggagaatatgttttcgcagcgttcttacaattaaattgtggtggaagttcgagacttgCGTAAACTATTTTTAATTTGGGATCTTGTAAATCTGGTAAGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTTCTCGAGtttttttaTCGAGgaagttcctatactttctagagaataggaacttcCCACCTTGATGTACACACCTTTAAAGTCAATAGGCATTCTCGTTTGTAATTCCTTGACACACATATCCATTAACTTTAAACCATCTTCGACCGTCATGTCCTTTCTATAATGTTTATCTAACAAAGATGTTGTGTAAAATGCAGCGTAGCCATGAGCACCATAAGGGAGTTCAACTTGTGTACCCAAATAATCTATCCAATTCAACGATGGCTCATTTTTCTTTACATCATATCCTCCAATTAAACAGTTCACCTGGTACGGTTTTCTAGATCTAAGGGAACTGGCCAATTGGTTTCTCACAAACGAGGCTGTTGCCTTTGGAGATAACTCAATGTCATTTTCTCTCATCGAGTACAATTGAATGTTTGCTTGAACATACTCGGCAAACTGAACCGTATCACCAGCTTCACCAGTGTATGCTATTAAGTTGTGTGCATTTAAATGTCTTGTTTTATCATCTGTATCCTTTAAAATTGAAATACCTCTTGTGGCAGCTTTACGGTGTTTAAACCCCAGCGCCTGGCGGG
+
+
+#pcr
+
+>Fw-primer-AHO1237 (C-6423)
+aggtgatgctgaagctattgaag
+
+>Rv-primer-AHO1236 (C-6422)
+TAAAGCTGCCACAAGAGGTATTTC
+
+>1750_AB_FRP3
+GACGGCACGGCCACGCGTTTAAACCGCCaggtgatgctgaagctattgaagctttggatggttctttcactaccgatactgtttttagagttactgctactggtgatggtttcactttgagagaagttccagttgatccaccattgactaaggttttcccagatgatgaatccgatgatgaatccgatgctggtgaagatggtgatccagattctagaactttcgttgcttatggtgatgatggtgatttggctggtttcgttgttgtttcttattctggttggaacagaagattgactgttgaagatattgaagttgctccagaacatagaggtcatggtgttggtagagctttgatgggtttggctactgaattcgccagagaaagaggtgctggtcatttgtggttggaagttaccaatgttaatgctccagctattcatgcttatagaagaatgggtttcactttgtgtggtttggatactgctttatacgatggtactgcttccgatggtgaacaagctttgtatatgtctatgccatgtccataataactcgagtcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacatctaatcaactcccagatcaccactatacatttaaaagtcattggtcaataactatactcgagtattgcctcatcaaagaaacaatcaaatattatagatactcactccatcacgtgataatttcactggtatggaaaagtggaaaattttataaaaaaaaatttgatgcctttggcatagctgaaacttcggcccaataggattggagaatatgttttcgcagcgttcttacaattaaattgtggtggaagttcgagacttgCGTAAACTATTTTTAATTTGGGATCTTGTAAATCTGGTAAGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTTCTCGAGtttttttaTCGAGgaagttcctatactttctagagaataggaacttcCCACCTTGATGTACACACCTTTAAAGTCAATAGGCATTCTCGTTTGTAATTCCTTGACACACATATCCATTAACTTTAAACCATCTTCGACCGTCATGTCCTTTCTATAATGTTTATCTAACAAAGATGTTGTGTAAAATGCAGCGTAGCCATGAGCACCATAAGGGAGTTCAACTTGTGTACCCAAATAATCTATCCAATTCAACGATGGCTCATTTTTCTTTACATCATATCCTCCAATTAAACAGTTCACCTGGTACGGTTTTCTAGATCTAAGGGAACTGGCCAATTGGTTTCTCACAAACGAGGCTGTTGCCTTTGGAGATAACTCAATGTCATTTTCTCTCATCGAGTACAATTGAATGTTTGCTTGAACATACTCGGCAAACTGAACCGTATCACCAGCTTCACCAGTGTATGCTATTAAGTTGTGTGCATTTAAATGTCTTGTTTTATCATCTGTATCCTTTAAAATTGAAATACCTCTTGTGGCAGCTTTACGGTGTTTAAACCCCAGCGCCTGGCGGG
+
+Template 1750_AB_FRP3 1750 bp linear limit=16:
+Fw-primer-AHO1237 anneals forward (--->) at 51
+Rv-primer-AHO1236 anneals reverse (<---) at 1698
+---
+Forward: Fw-primer-AHO1237 Reverse: Rv-primer-AHO1236
+
+5aggtgatgctgaagctattgaag...GAAATACCTCTTGTGGCAGCTTTA3
+                           ||||||||||||||||||||||||
+                          3CTTTATGGAGAACACCGTCGAAAT5
+5aggtgatgctgaagctattgaag3
+ |||||||||||||||||||||||
+3tccactacgacttcgataacttc...CTTTATGGAGAACACCGTCGAAAT5
+
+Taq DNA pol
+|95°C|95°C               |    |tmf:62.3
+|____|_____          72°C|72°C|tmr:63.7
+|3min|30s  \ 56.3°C _____|____|45s/kb
+|    |      \______/ 1:16|5min|GC 37%
+|    |       30s         |    |1694bp
+DNA pol w DNA binding domain (PHUSION)
+|98°C|98°C               |    |tmf:57.6
+|____|_____          72°C|72°C|tmr:58.0
+|30s |10s  \ 60.6°C _____|____|15s/kb
+|    |      \______/ 0:25|5min|GC 37%
+|    |       10s         |    |1694bp
+
+>1694bp_PCR_prod
+aggtgatgctgaagctattgaagctttggatggttctttcactaccgatactgtttttagagttactgctactggtgatggtttcactttgagagaagttccagttgatccaccattgactaaggttttcccagatgatgaatccgatgatgaatccgatgctggtgaagatggtgatccagattctagaactttcgttgcttatggtgatgatggtgatttggctggtttcgttgttgtttcttattctggttggaacagaagattgactgttgaagatattgaagttgctccagaacatagaggtcatggtgttggtagagctttgatgggtttggctactgaattcgccagagaaagaggtgctggtcatttgtggttggaagttaccaatgttaatgctccagctattcatgcttatagaagaatgggtttcactttgtgtggtttggatactgctttatacgatggtactgcttccgatggtgaacaagctttgtatatgtctatgccatgtccataataactcgagtcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacatctaatcaactcccagatcaccactatacatttaaaagtcattggtcaataactatactcgagtattgcctcatcaaagaaacaatcaaatattatagatactcactccatcacgtgataatttcactggtatggaaaagtggaaaattttataaaaaaaaatttgatgcctttggcatagctgaaacttcggcccaataggattggagaatatgttttcgcagcgttcttacaattaaattgtggtggaagttcgagacttgCGTAAACTATTTTTAATTTGGGATCTTGTAAATCTGGTAAGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTTCTCGAGtttttttaTCGAGgaagttcctatactttctagagaataggaacttcCCACCTTGATGTACACACCTTTAAAGTCAATAGGCATTCTCGTTTGTAATTCCTTGACACACATATCCATTAACTTTAAACCATCTTCGACCGTCATGTCCTTTCTATAATGTTTATCTAACAAAGATGTTGTGTAAAATGCAGCGTAGCCATGAGCACCATAAGGGAGTTCAACTTGTGTACCCAAATAATCTATCCAATTCAACGATGGCTCATTTTTCTTTACATCATATCCTCCAATTAAACAGTTCACCTGGTACGGTTTTCTAGATCTAAGGGAACTGGCCAATTGGTTTCTCACAAACGAGGCTGTTGCCTTTGGAGATAACTCAATGTCATTTTCTCTCATCGAGTACAATTGAATGTTTGCTTGAACATACTCGGCAAACTGAACCGTATCACCAGCTTCACCAGTGTATGCTATTAAGTTGTGTGCATTTAAATGTCTTGTTTTATCATCTGTATCCTTTAAAATTGAAATACCTCTTGTGGCAGCTTTA
+---

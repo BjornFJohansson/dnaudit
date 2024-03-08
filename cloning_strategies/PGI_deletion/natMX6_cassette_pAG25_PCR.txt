@@ -1,0 +1,87 @@
+# PCR
+
+>383_up-PGI1
+AGTCTTGCAAAATCGATTTAGAATCAAGATACCAGCCTAAAAATGCAGCTGAAGCTTCGTACGC
+
+>382_dn-PGI1
+TAGCTTTAATGTTCTTTAGGTATATATTTAAGAGCGATTTGTTCAgcataggccactagtggatctg
+
+>pAG25  (3704 bp)    Accession: pAG25
+gaacgcggccgccagctgaagcttcgtacgctgcaggtcgacggatccccgggttaattaaggcgcgccagatctgttta
+gcttgccttgtccccgccgggtcacccggccagcgacatggaggcccagaataccctccttgacagtcttgacgtgcgca
+gctcaggggcatgatgtgactgtcgcccgtacatttagcccatacatccccatgtataatcatttgcatccatacatttt
+gatggccgcacggcgcgaagcaaaaattacggctcctcgctgcagacctgcgagcagggaaacgctcccctcacagacgc
+gttgaattgtccccacgccgcgcccctgtagagaaatataaaaggttaggatttgccactgaggttcttctttcatatac
+ttccttttaaaatcttgctaggatacagttctcacatcacatccgaacataaacaaccatgggtaccactcttgacgaca
+cggcttaccggtaccgcaccagtgtcccgggggacgccgaggccatcgaggcactggatgggtccttcaccaccgacacc
+gtcttccgcgtcaccgccaccggggacggcttcaccctgcgggaggtgccggtggacccgcccctgaccaaggtgttccc
+cgacgacgaatcggacgacgaatcggacgacggggaggacggcgacccggactcccggacgttcgtcgcgtacggggacg
+acggcgacctggcgggcttcgtggtcgtctcgtactccggctggaaccgccggctgaccgtcgaggacatcgaggtcgcc
+ccggagcaccgggggcacggggtcgggcgcgcgttgatggggctcgcgacggagttcgcccgcgagcggggcgccgggca
+cctctggctggaggtcaccaacgtcaacgcaccggcgatccacgcgtaccggcggatggggttcaccctctgcggcctgg
+acaccgccctgtacgacggcaccgcctcggacggcgagcaggcgctctacatgagcatgccctgcccctaatcagtactg
+acaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaat
+gttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatg
+cgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacgccgccatccagtgtcgaaaacgagct
+cgaattcatcgatgatatcagatccactagtggcctatgcggccgcggatctgccggtctccctatagtgagtcgtatta
+atttcgataagccaggttaacctgcattaatgaatcggccaacgcgcggggagaggcggtttgcgtattgggcgctcttc
+cgcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatac
+ggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaag
+gccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcg
+aaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgc
+ttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcaatgctcacgctgtaggtatctcagttcg
+gtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaacta
+tcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagcagagcgaggt
+atgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggacagtatttggtatctgcgct
+ctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggttt
+ttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacg
+ctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacctagatccttttaaat
+taaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggc
+acctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacgggagg
+gcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaataaaccag
+ccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccgggaagc
+tagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgtcgt
+ttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggtt
+agctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgcataa
+ttctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgta
+tgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagtgctcatc
+attggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgc
+acccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaa
+agggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggttat
+tgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagt
+gccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggccctttcgtctcg
+cgcgtttcggtgatgacggtgaaaacctctgacacatgcagctcccggagacggtcacagcttgtctgtaagcggatgcc
+gggagcagacaagcccgtcagggcgcgtcagcgggtgttggcgggtgtcggggctggcttaactatgcggcatcagagca
+gattgtactgagagtgcaccatatggacatattgtcgttagaacgcggctacaattaatacataaccttatgtatcatac
+acatacgatttaggtgacactata
+
+
+Template pAG25 3704 bp linear limit=12:
+383_up-PGI1 anneals forward (--->) at 31
+382_dn-PGI1 anneals reverse (<---) at 1298
+---
+Forward: 383_up-PGI1 Reverse: 382_dn-PGI1
+
+                                             5cagctgaagcttcgtacgc...cagatccactagtggcctatgc3
+                                                                    ||||||||||||||||||||||
+                                                                   3gtctaggtgatcaccggatacgACTTGTTTAGCGAGAATTTATATATGGATTTCTTGTAATTTCGAT5
+5AGTCTTGCAAAATCGATTTAGAATCAAGATACCAGCCTAAAAATGCAGCTGAAGCTTCGTACGC3
+                                              |||||||||||||||||||
+                                             3gtcgacttcgaagcatgcg...gtctaggtgatcaccggatacg5
+
+Taq DNA pol
+|95°C|95°C               |    |tmf:62.3
+|____|_____          72°C|72°C|tmr:63.3
+|3min|30s  \ 61.3°C _____|____|45s/kb
+|    |      \______/ 1:02|5min|GC 55%
+|    |       30s         |    |1398bp
+DNA pol w DNA binding domain (PHUSION)
+|98°C|98°C               |    |tmf:57.9
+|____|_____          72°C|72°C|tmr:59.2
+|30s |10s  \ 60.9°C _____|____|15s/kb
+|    |      \______/ 0:20|5min|GC 55%
+|    |       10s         |    |1398bp
+
+>1398bp_PCR_prod
+AGTCTTGCAAAATCGATTTAGAATCAAGATACCAGCCTAAAAATGCAGCTGAAGCTTCGTACGCtgcaggtcgacggatccccgggttaattaaggcgcgccagatctgtttagcttgccttgtccccgccgggtcacccggccagcgacatggaggcccagaataccctccttgacagtcttgacgtgcgcagctcaggggcatgatgtgactgtcgcccgtacatttagcccatacatccccatgtataatcatttgcatccatacattttgatggccgcacggcgcgaagcaaaaattacggctcctcgctgcagacctgcgagcagggaaacgctcccctcacagacgcgttgaattgtccccacgccgcgcccctgtagagaaatataaaaggttaggatttgccactgaggttcttctttcatatacttccttttaaaatcttgctaggatacagttctcacatcacatccgaacataaacaaccatgggtaccactcttgacgacacggcttaccggtaccgcaccagtgtcccgggggacgccgaggccatcgaggcactggatgggtccttcaccaccgacaccgtcttccgcgtcaccgccaccggggacggcttcaccctgcgggaggtgccggtggacccgcccctgaccaaggtgttccccgacgacgaatcggacgacgaatcggacgacggggaggacggcgacccggactcccggacgttcgtcgcgtacggggacgacggcgacctggcgggcttcgtggtcgtctcgtactccggctggaaccgccggctgaccgtcgaggacatcgaggtcgccccggagcaccgggggcacggggtcgggcgcgcgttgatggggctcgcgacggagttcgcccgcgagcggggcgccgggcacctctggctggaggtcaccaacgtcaacgcaccggcgatccacgcgtaccggcggatggggttcaccctctgcggcctggacaccgccctgtacgacggcaccgcctcggacggcgagcaggcgctctacatgagcatgccctgcccctaatcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacgccgccatccagtgtcgaaaacgagctcgaattcatcgatgatatcagatccactagtggcctatgcTGAACAAATCGCTCTTAAATATATACCTAAAGAACATTAAAGCTA
+---

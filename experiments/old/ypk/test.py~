@@ -1,0 +1,122 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import zipfile
+import StringIO
+
+class InMemoryZip(object):
+
+   def __init__(self):
+       # Create the in-memory file-like object for working w/imz
+       self.in_memory_zip = StringIO.StringIO()
+
+   # Just zip it, zip it
+   def append(self, filename_in_zip, file_contents):
+       # Appends a file with name filename_in_zip and contents of
+       # file_contents to the in-memory zip.
+       # Get a handle to the in-memory zip in append mode
+       zf = zipfile.ZipFile(self.in_memory_zip, "a", zipfile.ZIP_DEFLATED, False)
+
+       # Write the file to the in-memory zip
+       zf.writestr(filename_in_zip, file_contents)
+
+       # Mark the files as having been created on Windows so that
+       # Unix permissions are not inferred as 0000
+       for zfile in zf.filelist:
+           zfile.create_system = 0
+       return
+
+   def read(self):
+       self.in_memory_zip.seek(0)
+       return self.in_memory_zip.read()
+
+   def writetofile(self, filename):
+       with file(filename, "wb") as f:
+           f.write(self.read())
+       
+   def zipstream(self):
+       self.in_memory_zip.seek(0)
+       return self.in_memory_zip.getvalue()
+       
+
+if __name__ == "__main__":
+# Run a test
+   imz = InMemoryZip()
+   
+   import pydna
+   
+   v = pydna.read("pYPKa.txt")
+   
+   imz.append("testfile.txt", "Make a 2µ")   
+   imz.append("pYPKa.txt"   , v.format("gb"))
+   
+   n=1000
+   line = imz.zipstream()
+   r=[line[i:i+n] for i in range(0, len(line), n)]
+    
+   with open("hej.zip", "wa") as f:
+        for chk in r:
+            f.write(chk)
+   
+   
+   #imz.writetofile("hej.zip")
+   
+   
+   
+   
+   
+
+import sys;sys.exit()
+
+import StringIO, zipfile
+      
+zipstream = StringIO.StringIO()            
+with zipfile.ZipFile(zipstream, mode='w') as myzip:
+    #print type(self.files["pYPKa.txt"].encode("utf-8"))
+    #myzip.writestr("pYPKa.txt", self.files["pYPKa.txt"])
+    myzip.writestr("bjorn", "björn" ) 
+zipstream.seek(0)
+zipstream.getvalue()
+
+
+
+
+
+
+
+
+
+
+
+import sys;sys.exit()
+g= u"2µ"
+hej1 = "2µ"
+print hej1=='2\xc2\xb5'
+from Bio import SeqIO
+s = SeqIO.read("pYPK0.txt", "gb")
+print s.features[8].qualifiers['label'][0]
+print s.format("gb")[4187:4190]
+print repr(s.format("gb")[4187:4190])
+print repr(s.features[8].qualifiers['label'][0])
+print repr(hej1) == repr(s.features[8].qualifiers['label'][0])
+with open("pYPK0.txt", "r") as f:
+    rawseq=f.read()    
+import StringIO 
+handle = StringIO.StringIO(rawseq)
+s=SeqIO.read(handle, "gb")
+print s.features[8].qualifiers['label'][0]
+print s.format("gb")[4187:4190]
+print repr(s.format("gb")[4187:4190])
+print repr(s.features[8].qualifiers['label'][0])
+print repr(hej1) == repr(s.features[8].qualifiers['label'][0])   
+import pydna
+s = pydna.read(rawseq)
+print s.format("gb")[4187:4190]
+print s.features[8].qualifiers['label'][0]
+s = pydna.read("pYPK0.txt")
+print s.format("gb")[4187:4190]
+
+
+
+
+

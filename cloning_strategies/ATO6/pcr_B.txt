@@ -1,0 +1,53 @@
+# pcr
+
+>Fw-primer-gRNA ATO6 (ATO4)
+CGTAAACTATTTTTAATTTGTCTGGTAAAGGAATTTCTCTGTTTTAGAGCTAGAAATAG
+
+>Rv-primer-AHO1097 (C-6419)
+CCCGCCAGGCGCTGGGGTTTAAACACCG
+
+>pADH147 template circular
+tgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagtgctcatcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggttattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggccctttGACGGCACGGCCACGCGTTTAAACCGCCGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTTCTCGAGtttttttaTCGAGgaagttcctatactttctagagaataggaacttcCCACCTTGATGTACACACCTTTAAAGTCAATAGGCATTCTCGTTTGTAATTCCTTGACACACATATCCATTAACTTTAAACCATCTTCGACCGTCATGTCCTTTCTATAATGTTTATCTAACAAAGATGTTGTGTAAAATGCAGCGTAGCCATGAGCACCATAAGGGAGTTCAACTTGTGTACCCAAATAATCTATCCAATTCAACGATGGCTCATTTTTCTTTACATCATATCCTCCAATTAAACAGTTCACCTGGTACGGTTTTCTAGATCTAAGGGAACTGGCCAATTGGTTTCTCACAAACGAGGCTGTTGCCTTTGGAGATAACTCAATGTCATTTTCTCTCATCGAGTACAATTGAATGTTTGCTTGAACATACTCGGCAAACTGAACCGTATCACCAGCTTCACCAGTGTATGCTATTAAGTTGTGTGCATTTAAATGTCTTGTTTTATCATCTGTATCCTTTAAAATTGAAATACCTCTTGTGGCAGCTTTACGGTGTTTAAACCCCAGCGCCTGGCGGGcgctcacaattccacacaacatacgagccggaagcataaagtgtaaagcctggggtgcctaatgagtgagctaactcacattaattgcgttgcgctcactgcccgctttccagtcgggaaacctgtcgtgccagctgcattaatgaatcggccaacgcgcggggagaggcggtttgcgtattgggcgctcttccgcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaaggccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctgtaggtatctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagcagagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggacagtatttggtatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacctagatccttttaaattaaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacgggagggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaataaaccagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccgggaagctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgtcgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgcataattctcttac
+
+
+
+Template pADH147 2878 bp circular limit=16:
+Fw-primer-gRNA anneals forward (--->) at 591
+Rv-primer-AHO1097 anneals reverse (<---) at 1208
+---
+Forward: Fw-primer-gRNA Reverse: Rv-primer-AHO1097
+
+                                        5GTTTTAGAGCTAGAAATAG...CGGTGTTTAAACCCCAGCGCCTGGCGGG3
+                                                               ||||||||||||||||||||||||||||
+                                                              3GCCACAAATTTGGGGTCGCGGACCGCCC5
+5CGTAAACTATTTTTAATTTGTCTGGTAAAGGAATTTCTCTGTTTTAGAGCTAGAAATAG3
+                                         |||||||||||||||||||
+                                        3CAAAATCTCGATCTTTATC...GCCACAAATTTGGGGTCGCGGACCGCCC5
+
+Taq DNA pol
+|95°C|95°C               |    |tmf:49.0
+|____|_____          72°C|72°C|tmr:82.7
+|3min|30s  \ 52.0°C _____|____|45s/kb
+|    |      \______/ 0:31|5min|GC 38%
+|    |       30s         |    |704bp
+
+
+DNA pol w DNA binding domain (PHUSION)
+|98°C|98°C               |    |tmf:43.7
+|____|_____          72°C|72°C|tmr:73.5
+|30s |10s  \ 46.7°C _____|____|15s/kb
+|    |      \______/ 0:10|5min|GC 38%
+|    |       10s         |    |704bp
+
+
+Q5 High-Fidelity DNA Polymerase
+|98°C|98°C               |    |tmf:xxxx
+|____|_____          72°C|72°C|tmr:xxxx
+|30s |15s  \ 55.0°C _____|____|30s/kb
+|    |      \______/ 1:00|2min|GC 38%
+|    |       25s         |    |704bp
+
+
+>B 704bp_PCR_prod
+CGTAAACTATTTTTAATTTGTCTGGTAAAGGAATTTCTCTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTTCTCGAGtttttttaTCGAGgaagttcctatactttctagagaataggaacttcCCACCTTGATGTACACACCTTTAAAGTCAATAGGCATTCTCGTTTGTAATTCCTTGACACACATATCCATTAACTTTAAACCATCTTCGACCGTCATGTCCTTTCTATAATGTTTATCTAACAAAGATGTTGTGTAAAATGCAGCGTAGCCATGAGCACCATAAGGGAGTTCAACTTGTGTACCCAAATAATCTATCCAATTCAACGATGGCTCATTTTTCTTTACATCATATCCTCCAATTAAACAGTTCACCTGGTACGGTTTTCTAGATCTAAGGGAACTGGCCAATTGGTTTCTCACAAACGAGGCTGTTGCCTTTGGAGATAACTCAATGTCATTTTCTCTCATCGAGTACAATTGAATGTTTGCTTGAACATACTCGGCAAACTGAACCGTATCACCAGCTTCACCAGTGTATGCTATTAAGTTGTGTGCATTTAAATGTCTTGTTTTATCATCTGTATCCTTTAAAATTGAAATACCTCTTGTGGCAGCTTTACGGTGTTTAAACCCCAGCGCCTGGCGGG
+---

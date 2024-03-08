@@ -1,0 +1,204 @@
+# coding: utf-8
+
+from time import gmtime, strftime
+import StringIO
+import itertools
+import textwrap
+import zipfile
+
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+#from Bio.Alphabet import 
+from Bio.Restriction import  ZraI, AjiI, EcoRV, AscI
+import pydna
+from load_my_primers import primer,new_primer, new_primer_dict
+
+class pYPKa_clone(pydna.Dseqrecord):
+    
+    pYPKa = pydna.read("pCAPs-AjiI.wiki")
+    
+    def __init__(self, enzyme, insert):
+        
+        self.enzyme  = enzyme
+        self.insert  = insert
+        self.rev_seq = (self.pYPKa.cut(self.enzyme).pop()  + self.insert.rc()).looped()
+        
+        pydna.Dseqrecord.__init__(self,
+                                  record = (self.pYPKa.cut(self.enzyme).pop() + self.insert).looped())
+        self.name = "pYPKa_{enzyme_name}_{insert}".format(enzyme_name = self.enzyme, insert = self.insert.name)
+
+
+        
+class pYPKa_ZraI_clone(pYPKa_clone):
+    
+    fp = new_primer_dict["YPK-A"]
+    rp = primer[342]
+
+    def __init__(self, insert):
+        pYPKa_clone.__init__(self, ZraI, insert)
+        
+class pYPKa_AjiI_clone(pYPKa_clone):
+    
+    fp = primer[468]
+    rp = primer[342]
+    
+    def __init__(self, insert):
+        pYPKa_clone.__init__(self, AjiI, insert)
+    
+    
+class pYPKa_EcoRV_clone(pYPKa_clone):
+    
+    fp = primer[568]
+    rp = primer[342]
+    
+    def __init__(self, insert):
+        pYPKa_clone.__init__(self, EcoRV, insert)
+        
+
+class pYPK0_tp_gene_tp():
+    
+    def __init__(self, tp1, gene, tp2):        
+        
+        self.pCAPs_ZraI_tp1  = pYPKa_ZraI_clone(tp1)
+        self.pCAPs_AjiI_gene = pYPKa_AjiI_clone(gene)
+        self.pCAPs_EcoRV_tp2 = pYPKa_EcoRV_clone(tp2) 
+
+
+
+
+
+class PathWay(object):
+    
+    pYPK0 = pydna.read("pCAPs-pSU0.wiki")
+    pYPKa = pydna.read("pCAPs-AjiI.wiki")
+    maxlength    = 29
+    target_tm    = 60
+    fp_tail_tp   = "ttaaat"
+    rp_tail_tp   = "taattaa"
+    fp_tail_gene = "aa"
+    rp_tail_gene = ""
+    
+    tp_ZraI_fwd = SeqRecord(Seq("gcggccgctgacTTAAAT"), name="tp_ZraI_fwd")
+    tp_ZraI_rev = SeqRecord(Seq("cgttcctcgacTAATTAA"), name="tp_ZraI_rev")
+    tp_Eco32I_fwd = SeqRecord(Seq("acgcatcaggatTTAAAT"), name="tp_Eco32I_fwd")
+    tp_Eco32I_rev = SeqRecord(Seq("ggtaaatccggatTAATTAA"), name="tp_Eco32I_rev")
+    
+    
+    def __init__(self, tp_sequence_file, gene_sequence_file):
+        
+        self.tp_sequence_file  = tp_sequence_file
+        self.gene_sequence_file = gene_sequence_file
+        self.tps   = pydna.parse(self.tp_sequence_file)
+        self.genes = pydna.parse(self.gene_sequence_file)
+        assert len(self.tps) == len(self.genes) + 1
+        
+        self.pYPKa_AjiI_clones=[]
+        
+        for gene in self.genes:
+            if cloned((self.pYPKa, AjiI), gene):
+                pYPKa_AjiI_clones.append(gene)
+            else:
+                f,r = pydna.cloning_primers(gene,
+                                            minlength=16,
+                                            maxlength=self.maxlength,
+                                            fp_tail = self.fp_tail_tp, 
+                                            rp_tail = self.rp_tail_tp,
+                                            target_tm=self.target_tm,
+                                            primerc = 1000.0,
+                                            saltc=50.0)
+                ins = pydna.pcr(f,r,gene)
+                pYPKa_AjiI_clones.append(pYPKa_AjiI_clone(ins))
+                
+        self.pYPKa_ZraI_clones=[]
+        self.pYPKa_EcoRV_clones=[]
+        
+        for tp in self.tps:
+            if cloned((self.pYPKa, ZraI), gene):
+                pYPKa_AjiI_clones.append(gene)
+            else:
+                f,r = pydna.cloning_primers(gene,
+                                            minlength=16,
+                                            maxlength=self.maxlength,
+                                            fp_tail = self.fp_tail_tp, 
+                                            rp_tail = self.rp_tail_tp,
+                                            target_tm=self.target_tm,
+                                            primerc = 1000.0,
+                                            saltc=50.0)
+                ins = pydna.pcr(f,r,gene)
+                pYPKa_AjiI_clones.append(pYPKa_AjiI_clone(ins))
+            
+                
+        
+
+        
+        
+        pw = list(itertools.chain.from_iterable(zip(self.tps, self.genes))) + self.tps[-1:]
+        
+        self.tp_gene_tp = [(pw[i], pw[i+1], pw[i+2]) for i in range(0, len(pw)-1, 2)]
+        
+        self.pYPK0_clones=[]
+        
+        for tp1, gene, tp2 in self.tp_gene_tp:
+            self.pYPK0_clones.append(pYPK0_tp_gene_tp( tp1, gene, tp2))
+            
+
+
+
+
+    def fig(self):
+        
+        tp_figs   = [">{}>".format(tp.name) for tp in self.tps]
+        gene_figs = ["[{}]".format(g.name) for g in self.genes]
+
+        pw_fig_string = "".join(list(itertools.chain.from_iterable(zip(tp_figs, gene_figs))) + tp_figs[-1:])
+
+        plasmid_fig  = "  -{}-\n".format(pw_fig_string)
+        plasmid_fig += " |"+" "*(len(pw_fig_string)+2)+"|\n"
+        plasmid_fig += "  "+"-"*(len(pw_fig_string)+2)
+        
+        return plasmid_fig
+    
+
+    def theoretical_pathway(self):
+       # cut backbone
+        pCAPs_pSU0_E_Z, stuffer = pCAPs_pSU0.cut((EcoRV, ZraI))
+
+        # initiate stuffer fragments
+        pCAP_a  = Dseqrecord("GTCgaggaacgccaggttgcccactttctcactagtgacctgcagccGAC")
+        pCAP_b  = Dseqrecord("GTGccatctgtgcagacaaacgcatcagGAT")
+
+        # initiate primer tails
+        t1 = Dseqrecord(fp_tail_tp)
+        t2 = Dseqrecord(rp_tail_tp).rc()
+        t3 = Dseqrecord(fp_tail_gene)
+        t4 = Dseqrecord(rp_tail_gene).rc()
+
+        # assemble theoretical pathway
+        x=Dseqrecord("")
+        for tp, gene in zip(tps, genes):
+            x+= t1 + tp + t2 + pCAP_a + t3 + gene + t4 + pCAP_b
+            
+        x+= t1+tps[-1]+t2
+
+        return (pCAPs_pSU0_E_Z + x).looped().synced("tcgcgcgtttcggtgatgacggtgaaaacc")
+
+
+def cloned(vector, enzyme, candidate):
+    if len(candidate) <= len(candidate):
+        return
+    candidate3 = str(candidate.seq.tolinear()*3)
+    if vector.seq.tostring() in candidate3:
+        insert = min([c for c in candidate3.split(str(candidate.seq)) if c])
+        return insert
+    return
+    
+if __name__ == "__main__":
+    
+#    from docopt import docopt
+#    import os   
+#    import sys
+
+    
+    hej = PathWay("RPL12A_RPL12B_RPS7B.txt", "KlLAC4_KlLAC12.txt")
+        
+    #print hej.fig()

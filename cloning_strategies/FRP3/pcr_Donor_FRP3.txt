@@ -1,0 +1,42 @@
+# pcr
+
+>FRP3-donorGFP-fw
+GGTATTGCTAATCCTCAAAATAGTTATATTACTGTTAAAGCTATTCCATTACCAGATTTACAAGATCCAACAAGAAAAAATAAAggtgctggcgcaggtgctATGTCTAAAGGTGAAGAATT
+
+>FRP3-donorGFP-rv
+TTGATTGATTGATTGATTGATTGATTGATTACTTGGCCAATTATTTTATTTGTACAATTCATCCA
+
+>CIp10 - gamma-mGFP template circular
+atgtctaaaggtgaagaattattcactggtgttgtcccaattttggttgaattagatggtgatgttaatggtcacaaattttctgtctccggtgaaggtgaaggtgatgctacttacggtaaattgaccttaaaatttatttgtactactggtaaattgccagttccatggccaaccttagtcactactttatgttatggtgttcaatgtttttcaagatacccagatcatatgaaacaacatgactttttcaagtctgccatgccagaaggttatgttcaagaaagaactatttttttcaaagatgacggtaactacaagaccagagctgaagtcaagtttgaaggtgataccttagttaatagaatcgaattaaaaggtattgattttaaagaagatggtaacattttaggtcacaaattggaatacaactataactctcacaatgtttacatcatggctgacaaacaaaagaatggtatcaaagctaacttcaaaactagacacaacattgaagatggttctgttcaattagctgaccattatcaacaaaatactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctaaattatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacccatggtatggatgaattgtacaaataaggcgcgccattataagtaaatgcatgtatactaaactcacaaattagagcttcaatttaattatatcagttattacccggggtcaaaactagagaataataaagaaaacgatcttttcaaaaagaaaaaaccttttagttttcctttgttgttgttgtgggtgtgtgctatttatattatatagtttactcataataccataaaatattcggtttgattaggttattttaataagctaatttgtttctaatcgtgtaatttatgctgtgtatattaagtagtgtgtgcactgcccaaaaatgtttgttgtttatagtcggttaaagagaaaaaagaaaaaaagatccatacacacacgttaattagttgttcaacgtaatacactcatattttgttcttatttgctttcggtcgctgttctcaccaagatttattgccaacgaaacaatttttttttatatattttcagatttttctttttttcctttcctttccttttctaattttcactcctggttttctttctttcttagaaacattatctcgatattaatattaaaaaaatataatcattcaaaatggacggtggtatgttttagtttagcttcaattctaattgattgattaatcagttgattggtttcaatatgacaaatgggtagggtgggaaaacttcattttcaattcagatcaaacttttttgttgtcgacataatatttctcgtttgggatgttactgtcacattaataatacacacacatcagcttataattttgaaagtaatttatcagatatgttgtgacgatcagtggaaatggctaacttcaatgtatctgttcttcccctttttcaaagttcacgttttttgattgattgattgatctgtcggcagtggtttcaaaaccattcggtgagtaatcctatcaatcaatgttacgacaaaaggctcaatattcaaaattgcaatgttttatgttttcctacgtgtacttgtgcaaggcaattgattcaacattgcttttggtgtttgacgagtttctagtttggacttgtgttgttatctgggctatacagatttcccggctcactatgaattttttttttcgacgctcagtgcacacaactataaacaacacaaacacaaacacagcaagaaaaaaaaaaaacgaacattgaattgaaaccaagccaactgaaaaattccttatttaaatgactgtcatactaacccatttttatagaagaagttgctgctttagttatcgataacggttctcatatgaaaatttcggtgatccctgagcaggtggcggaaacattggatgctgagaaccatttcattgttcgtgaagtgttcgatgtgcacctatccgaccaaggctttgaactatctaccagaagtgtgagcccctaccggaaggattacatctcggatgatgactctgatgaagactctgcttgctatggcgcattcatcgaccaagagcttgtcgggaagattgaactcaactcaacatggaacgatctagcctctatcgaacacattgttgtgtcgcacacgcaccgaggcaaaggagtcgcgcacagtctcatcgaatttgcgaaaaagtgggcactaagcagacagctccttggcatacgattagagacacaaacgaacaatgtacctgcctgcaatttgtacgcaaaatgtggctttactctcggcggcattgacctcttcacgtataaaactagacctcaagtctcgaacgaaacagcgatgtactggtactggttctcgggagcacaggatgacgcctaacatatgtgaagtgtgaagggggagattttcactttattagatttgtatatatgtataataaataaataaataagttaaataaataattagataagggtggtaattattactatttacaatcaaaggtggtcctgcactcgaattcatcgatgatatcagagagctcgaattcatcgatgatatcagatccactagtggcctatgcggccgcggatctgccggtctccctatagtgagtcgtattaatttcgataagccaggttaacctgcattaatgaatcggccaacgcgcggggagaggcggtttgcgtattgggcgctcttccgcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaaggccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctgtaggtatctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagcagagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaagaacagtatttggtatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacctagatccttttaaattaaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacgggagggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaataaaccagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccgggaagctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgtcgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgcataattctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagtgctcatcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggttattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggccctttcgtctcgcgcgtttcggtgatgacggtgaaaacctctgacacatgcagctcccggagacggtcacagcttgtctgtaagcggatgccgggagcagacaagcccgtcagggcgcgtcagcgggtgttggcgggtgtcggggctggcttaactatgcggcatcagagcagattgtactgagagtgcaccatatggacatattgtcgttagaacgcggctacaattaatacataaccttatgtatcatacacatacgatttaggtgacactatagaacgcggccgccagctgaagcttcgtacgctgcagggtgctggcgcaggtgct
+
+
+
+Template CIp10 5165 bp circular limit=16:
+FRP3-donorGFP-fw anneals forward (--->) at 20
+FRP3-donorGFP-rv anneals reverse (<---) at 697
+---
+Forward: FRP3-donorGFP-fw Reverse: FRP3-donorGFP-rv
+
+                                                                                    5ggtgctggcgcaggtgctATGTCTAAAGGTGAAGAATT...TGGATGAATTGTACAAATAA3
+                                                                                                                              ||||||||||||||||||||
+                                                                                                                             3ACCTACTTAACATGTTTATTTTATTAACCGGTTCATTAGTTAGTTAGTTAGTTAGTTAGTTAGTT5
+5GGTATTGCTAATCCTCAAAATAGTTATATTACTGTTAAAGCTATTCCATTACCAGATTTACAAGATCCAACAAGAAAAAATAAAggtgctggcgcaggtgctATGTCTAAAGGTGAAGAATT3
+                                                                                     ||||||||||||||||||||||||||||||||||||||
+                                                                                    3ccacgaccgcgtccacgaTACAGATTTCCACTTCTTAA...ACCTACTTAACATGTTTATT5
+
+Taq DNA pol
+|95°C|95°C               |    |tmf:77.4
+|____|_____          72°C|72°C|tmr:51.4
+|3min|30s  \ 51.8°C _____|____|45s/kb
+|    |      \______/ 0:38|5min|GC 34%
+|    |       30s         |    |864bp
+DNA pol w DNA binding domain (PHUSION)
+|98°C|98°C               |    |tmf:71.5
+|____|_____          72°C|72°C|tmr:46.7
+|30s |10s  \ 49.7°C _____|____|15s/kb
+|    |      \______/ 0:12|5min|GC 34%
+|    |       10s         |    |864bp
+
+>donor GFP 864bp_FRP3
+GGTATTGCTAATCCTCAAAATAGTTATATTACTGTTAAAGCTATTCCATTACCAGATTTACAAGATCCAACAAGAAAAAATAAAggtgctggcgcaggtgctatgtctaaaggtgaagaattattcactggtgttgtcccaattttggttgaattagatggtgatgttaatggtcacaaattttctgtctccggtgaaggtgaaggtgatgctacttacggtaaattgaccttaaaatttatttgtactactggtaaattgccagttccatggccaaccttagtcactactttatgttatggtgttcaatgtttttcaagatacccagatcatatgaaacaacatgactttttcaagtctgccatgccagaaggttatgttcaagaaagaactatttttttcaaagatgacggtaactacaagaccagagctgaagtcaagtttgaaggtgataccttagttaatagaatcgaattaaaaggtattgattttaaagaagatggtaacattttaggtcacaaattggaatacaactataactctcacaatgtttacatcatggctgacaaacaaaagaatggtatcaaagctaacttcaaaactagacacaacattgaagatggttctgttcaattagctgaccattatcaacaaaatactccaattggtgatggtccagtcttgttaccagacaaccattacttatccactcaatctaaattatccaaagatccaaacgaaaagagagaccacatggtcttgttagaatttgttactgctgctggtattacccatggtatggatgaattgtacaaataaAATAATTGGCCAAGTAATCAATCAATCAATCAATCAATCAATCAA
+---

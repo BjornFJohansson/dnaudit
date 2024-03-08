@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
+execfile("header.py")
+
+def design():
+    #---------------------------------------------------------------------------
+    # This script should define a Dseqrecord named seq
+    
+    from pYPKa import pYPKa
+    from pydna import read
+    from pydna import Dseqrecord
+    from pydna import pcr
+    from pydna import parse
+
+    from Bio.Restriction import {enz}
+    
+    enz = {enz}
+    
+    tp = read("{tp}.gb")
+    
+    fp = read('''
+{f}''', ds=False)
+    
+    rp = read('''
+{r}''', ds=False)
+    
+    pYPKa_cut = pYPKa.cut(enz).pop()
+    
+    tp = pcr( fp, rp, tp)
+    
+    pYPKa_enz_tp = (pYPKa_cut + tp).looped()
+    
+    pYPKa_enz_tp = pYPKa_enz_tp.synced("tcgcgcgtttcggtgatgacggtgaaaacctctg")
+    
+    seq = pYPKa_enz_tp
+
+    # This script should define a Dseqrecord named seq
+    #---------------------------------------------------------------------------
+    assert isinstance(seq, Dseqrecord)
+    return seq
+    
+execfile("footer.py")

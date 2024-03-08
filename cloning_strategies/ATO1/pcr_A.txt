@@ -1,0 +1,53 @@
+# pcr
+
+>Fw-primer-AHO1096(C-6418)
+GACGGCACGGCCACGCGTTTAAACCGCC
+
+>Rv-primer-AHO1098(C-6420)
+caaattaaaaatagtttacgcaag
+
+>pADH110 template circular
+tgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagtgctcatcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggttattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggccctttGACGGCACGGCCACGCGTTTAAACCGCCaggtgatgctgaagctattgaagctttggatggttctttcactaccgatactgtttttagagttactgctactggtgatggtttcactttgagagaagttccagttgatccaccattgactaaggttttcccagatgatgaatccgatgatgaatccgatgctggtgaagatggtgatccagattctagaactttcgttgcttatggtgatgatggtgatttggctggtttcgttgttgtttcttattctggttggaacagaagattgactgttgaagatattgaagttgctccagaacatagaggtcatggtgttggtagagctttgatgggtttggctactgaattcgccagagaaagaggtgctggtcatttgtggttggaagttaccaatgttaatgctccagctattcatgcttatagaagaatgggtttcactttgtgtggtttggatactgctttatacgatggtactgcttccgatggtgaacaagctttgtatatgtctatgccatgtccataataactcgagtcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacatctaatcaactcccagatcaccactatacatttaaaagtcattggtcaataactatactcgagtattgcctcatcaaagaaacaatcaaatattatagatactcactccatcacgtgataatttcactggtatggaaaagtggaaaattttataaaaaaaaatttgatgcctttggcatagctgaaacttcggcccaataggattggagaatatgttttcgcagcgttcttacaattaaattgtggtggaagttcgagacttgcgtaaactatttttaatttgCGGTGTTTAAACCCCAGCGCCTGGCGGGcgctcacaattccacacaacatacgagccggaagcataaagtgtaaagcctggggtgcctaatgagtgagctaactcacattaattgcgttgcgctcactgcccgctttccagtcgggaaacctgtcgtgccagctgcattaatgaatcggccaacgcgcggggagaggcggtttgcgtattgggcgctcttccgcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaaggccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctgtaggtatctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagcagagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggacagtatttggtatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacctagatccttttaaattaaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacgggagggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaataaaccagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccgggaagctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgtcgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgcataattctcttac
+
+
+
+Template pADH110 3280 nt circular:
+Fw-primer-AHO1096(C-6418) anneals forward (--->) at 572
+Rv-primer-AHO1098(C-6420) anneals reverse (<---) at 1586
+---
+Forward: Fw-primer-AHO1096(C-6418) Reverse: Rv-primer-AHO1098(C-6420)
+
+5GACGGCACGGCCACGCGTTTAAACCGCC...cttgcgtaaactatttttaatttg3
+                                ||||||||||||||||||||||||
+                               3gaacgcatttgataaaaattaaac5
+5GACGGCACGGCCACGCGTTTAAACCGCC3
+ ||||||||||||||||||||||||||||
+3CTGCCGTGCCGGTGCGCAAATTTGGCGG...gaacgcatttgataaaaattaaac5
+
+Taq DNA pol
+|95°C|95°C               |    |tmf:81.4
+|____|_____          72°C|72°C|tmr:54.6
+|3min|30s  \ 54.0°C _____|____|45s/kb
+|    |      \______/ 0:47|5min|GC 38%
+|    |       30s         |    |1066bp
+
+
+DNA pol w DNA binding domain (PHUSION)
+|98°C|98°C               |    |tmf:73.8
+|____|_____          72°C|72°C|tmr:50.2
+|30s |10s  \ 53.2°C _____|____|15s/kb
+|    |      \______/ 0:15|5min|GC 38%
+|    |       10s         |    |1066bp
+
+
+Q5 High-Fidelity DNA Polymerase
+|98°C|98°C               |    |tmf:xxxx
+|____|_____          72°C|72°C|tmr:xxxx
+|30s |15s  \ 55.0°C _____|____|30s/kb
+|    |      \______/ 1:10|2min|GC 38%
+|    |       25s         |    |1066bp
+
+
+>A 1066bp_PCR_prod pSNR52
+GACGGCACGGCCACGCGTTTAAACCGCCaggtgatgctgaagctattgaagctttggatggttctttcactaccgatactgtttttagagttactgctactggtgatggtttcactttgagagaagttccagttgatccaccattgactaaggttttcccagatgatgaatccgatgatgaatccgatgctggtgaagatggtgatccagattctagaactttcgttgcttatggtgatgatggtgatttggctggtttcgttgttgtttcttattctggttggaacagaagattgactgttgaagatattgaagttgctccagaacatagaggtcatggtgttggtagagctttgatgggtttggctactgaattcgccagagaaagaggtgctggtcatttgtggttggaagttaccaatgttaatgctccagctattcatgcttatagaagaatgggtttcactttgtgtggtttggatactgctttatacgatggtactgcttccgatggtgaacaagctttgtatatgtctatgccatgtccataataactcgagtcagtactgacaataaaaagattcttgttttcaagaacttgtcatttgtatagtttttttatattgtagttgttctattttaatcaaatgttagcgtgatttatattttttttcgcctcgacatcatctgcccagatgcgaagttaagtgcgcagaaagtaatatcatgcgtcaatcgtatgtgaatgctggtcgctatactgctgtcgattcgatactaacatctaatcaactcccagatcaccactatacatttaaaagtcattggtcaataactatactcgagtattgcctcatcaaagaaacaatcaaatattatagatactcactccatcacgtgataatttcactggtatggaaaagtggaaaattttataaaaaaaaatttgatgcctttggcatagctgaaacttcggcccaataggattggagaatatgttttcgcagcgttcttacaattaaattgtggtggaagttcgagacttgcgtaaactatttttaatttg
+---

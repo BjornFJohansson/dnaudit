@@ -1,0 +1,19 @@
+# Set the total storage limit for all queues to 120MB
+total_storage_limit: 120M
+queue:
+- name: foo
+  rate: 35/s
+  
+queue:
+# Change the refresh rate of the default queue from 5/s to 1/s
+- name: default
+  rate: 1/s
+  bucket_size: 40
+  max_concurrent_requests: 10
+  
+  
+  
+# The task queue configuration for the app is updated when you upload the application using appcfg.py update.
+# You can update just the configuration for an app's task queues without uploading the full application. 
+# To upload the queue.yaml file, use the appcfg.py update_queues command:
+# appcfg.py update_queues myapp/

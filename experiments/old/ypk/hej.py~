@@ -1,0 +1,23 @@
+
+
+
+
+if __name__ == "__main__":
+    import sys, os
+    print "start!"
+    try:
+        filename = sys.argv[1]
+    except IndexError:
+        raise Exception("data file expected!")
+    else:
+        with open(filename, "r") as f:
+            text=f.read()
+            
+        pw = PathWay( text )   
+        pw.generate_files()
+        
+        with open("ypk_assembly.zip", "wa") as f:
+            for chk in [pw.zs()[i:i+n] for i in range(0, len(line), 1000)]:
+                f.write(chk)
+  
+        print  "done!" 

@@ -1,0 +1,50 @@
+LOCUS       New_DNA                  858 bp    DNA     linear       19-FEB-2024
+DEFINITION  .
+ACCESSION   
+VERSION     
+SOURCE      .
+  ORGANISM  .
+COMMENT     
+COMMENT     ApEinfo:methylated:0
+FEATURES             Location/Qualifiers
+     misc_feature    1..16
+                     /locus_tag="New Feature"
+                     /label="New Feature"
+                     /ApEinfo_label="New Feature"
+                     /ApEinfo_fwdcolor="#00ffff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    813..858
+                     /locus_tag="New Feature(1)"
+                     /label="New Feature(1)"
+                     /ApEinfo_label="New Feature"
+                     /ApEinfo_fwdcolor="#00ff79"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    1..78
+                     /locus_tag="New Feature(2)"
+                     /label="New Feature(2)"
+                     /ApEinfo_label="New Feature"
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+ORIGIN
+        1 ATTTCTGGTA TGGCAGATAA ATTCAATTCT TATTTCACAG TTCATCCACT TCCAGTCCCT
+       61 CAATTTGGAA AGAAAAATgg tgctggcgca ggtgctATGT CTAAAGGTGA AGAATTattc
+      121 actggtgttg tcccaatttt ggttgaatta gatggtgatg ttaatggtca caaattttct
+      181 gtctccggtg aaggtgaagg tgatgctact tacggtaaat tgaccttaaa atttatttgt
+      241 actactggta aattgccagt tccatggcca accttagtca ctactttatg ttatggtgtt
+      301 caatgttttt caagataccc agatcatatg aaacaacatg actttttcaa gtctgccatg
+      361 ccagaaggtt atgttcaaga aagaactatt tttttcaaag atgacggtaa ctacaagacc
+      421 agagctgaag tcaagtttga aggtgatacc ttagttaata gaatcgaatt aaaaggtatt
+      481 gattttaaag aagatggtaa cattttaggt cacaaattgg aatacaacta taactctcac
+      541 aatgtttaca tcatggctga caaacaaaag aatggtatca aagctaactt caaaactaga
+      601 cacaacattg aagatggttc tgttcaatta gctgaccatt atcaacaaaa tactccaatt
+      661 ggtgatggtc cagtcttgtt accagacaac cattacttat ccactcaatc taaattatcc
+      721 aaagatccaa acgaaaagag agaccacatg gtcttgttag aatttgttac tgctgctggt
+      781 attacccatg gtaTGGATGA ATTGTACAAA TAAATCTAAA CTAGCTATGC TGTGCATCCT
+      841 AGAATTCTAT TATTCATG    
+//

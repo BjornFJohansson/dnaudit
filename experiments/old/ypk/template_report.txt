@@ -1,0 +1,12 @@
+=====================================================================
+Yeast Pathway Kit Assembly Report
+=====================================================================
+
+Yeast pathway kit assembly {now}:
+
+`{pathway_name} <./{pathway_name}.txt>`_
+(`plan <./{pathway_name}_plan.html>`__)
+
+List of all `PCR primers <./primer_list.txt>`_ needed
+  
+
