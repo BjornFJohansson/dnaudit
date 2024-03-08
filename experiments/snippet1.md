@@ -1,27 +1,74 @@
-Hi and thanks for all the help.
+# This is a markdown files
 
-I have replaced my old code with one based on pydivsufsort common_substring.
-One single test failed and I made a minimal example (in attach).
+Here we can add images for example:
 
-Basically, for some reason pydivsufsort common_substring only returned three results although
-several more are present.
+![borb](borb.jpg)
 
-We published pydna in 2015, and I think that speeding it up together with some other improvements like:
 
-- Adding Golden gate cloning simulation
-- Adding Gateway cloning simulation
-- Exposing some functionality online
+The markdown viewer [chrome extension](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)
+can be used to view formatted markdown.
 
-could warrant a second publication.
+```
+Figure:
 
-I wonder if you would be willing to be a co-author by writing a paragraph or two on how and why the new code makes
-finding common substrings faster?
+ -|a|25
+|    \/
+|    /\
+|    25|b|25
+|         \/
+|         /\
+|         25|c|25
+|              \/
+|              /\
+|              25-
+|                 |
+ -----------------
 
-All the best,
-Björn
+Detailed figure:
 
-![](borb.jpg)
+|||||||||||||||||||||||||
+atgaggcgcttttaaatatggcgaaAtaagtgatttaacgctttgaatatg
+                          TAAGTGATTTAACGCTTTGAATATG
+                          taagtgatttaacgctttgaatatgCCactatatacttaaatttgatttcgt
+                                                     ACTATATACTTAAATTTGATTTCGT
+                                                     actatatacttaaatttgatttcgtGGGatgaggcgcttttaaatatggcgaa
+                                                                                 ATGAGGCGCTTTTAAATATGGCGAA
 
-All modern web browsers support viewing SVG files. That includes Chrome, Edge, Firefox, and
-Safari. So if you have an SVG and can't open it with anything else, open your favorite browser,
- select File > Open, then choose the SVG file you'd like to see. It will appear in your browser window.
+
+Resulting sequence:
+
+>name circular
+atgaggcgcttttaaatatggcgaaAtaagtgatttaacgctttgaatatgCCactatatacttaaatttgatttcgtGGG
+---
+Figure:
+
+ -|a_rc|25
+|       \/
+|       /\
+|       25|c_rc|25
+|               \/
+|               /\
+|               25|b_rc|25
+|                       \/
+|                       /\
+|                       25-
+|                          |
+ --------------------------
+
+Detailed figure:
+
+|||||||||||||||||||||||||
+catattcaaagcgttaaatcacttaTttcgccatatttaaaagcgcctcat
+                          TTCGCCATATTTAAAAGCGCCTCAT
+                          ttcgccatatttaaaagcgcctcatCCCacgaaatcaaatttaagtatatagt
+                                                      ACGAAATCAAATTTAAGTATATAGT
+                                                      acgaaatcaaatttaagtatatagtGGcatattcaaagcgttaaatcactta
+                                                                                 CATATTCAAAGCGTTAAATCACTTA
+
+
+Resulting sequence:
+
+>name circular
+catattcaaagcgttaaatcacttaTttcgccatatttaaaagcgcctcatCCCacgaaatcaaatttaagtatatagtGG
+---
+```

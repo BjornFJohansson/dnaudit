@@ -1,26 +1,34 @@
-Hi and thanks for all the help.
-
-I have replaced my old code with one based on pydivsufsort common_substring.
-One single test failed and I made a minimal example (in attach).
-
-Basically, for some reason pydivsufsort common_substring only returned three results although
-several more are present.
-
-We published pydna in 2015, and I think that speeding it up together with some other improvements like:
-
-- Adding Golden gate cloning simulation
-- Adding Gateway cloning simulation
-- Exposing some functionality online
-
-could warrant a second publication.
-
-I wonder if you would be willing to be a co-author by writing a paragraph or two on how and why the new code makes
-finding common substrings faster?
-
-All the best,
-Björn
 
 
-All modern web browsers support viewing SVG files. That includes Chrome, Edge, Firefox, and
-Safari. So if you have an SVG and can't open it with anything else, open your favorite browser,
- select File > Open, then choose the SVG file you'd like to see. It will appear in your browser window.
+
+```
+Template CYC1 330 bp linear limit=12:
+1_5CYC1clone anneals forward (--->) at 19
+2_3CYC1clon anneals reverse (<---) at 308
+---
+Forward: 1_5CYC1clone Reverse: 2_3CYC1clon
+
+                5atgactgaattcaaggccg...cttgaaaaaagcctgtgag3
+                                       |||||||||||||||||||
+                                      3GAACTTTTTTCGGACACTCTAGATTCAGCTGTAGC5
+5GATCGGCCGGATCCAAATGACTGAATTCAAGGCCG3
+                 |||||||||||||||||||
+                3tactgacttaagttccggc...gaacttttttcggacactc5
+
+Taq DNA pol
+|95°C|95°C               |    |tmf:58.4
+|____|_____          72°C|72°C|tmr:54.7
+|3min|30s  \ 54.7°C _____|____|45s/kb
+|    |      \______/ 0:30|5min|GC 43%
+|    |       30s         |    |359bp
+DNA pol w DNA binding domain (PHUSION)
+|98°C|98°C               |    |tmf:54.6
+|____|_____          72°C|72°C|tmr:51.1
+|30s |10s  \ 54.1°C _____|____|15s/kb
+|    |      \______/ 0:10|5min|GC 43%
+|    |       10s         |    |359bp
+
+>359bp_PCR_prod
+GATCGGCCGGATCCAAATGACTGAATTCAAGGCCGgttctgctaagaaaggtgctacacttttcaagactagatgtctacaatgccacaccgtggaaaagggtggcccacataaggttggtccaaacttgcatggtatctttggcagacactctggtcaagctgaagggtattcgtacacagatgccaatatcaagaaaaacgtgttgtgggacgaaaataacatgtcagagtacttgactaacccaaagaaatatattcctggtaccaagatggcctttggtgggttgaagaaggaaaaagacagaaacgacttaattacctaCTTGAAAAAAGCCTGTGAGATCTAAGTCGACATCG
+---
+```
